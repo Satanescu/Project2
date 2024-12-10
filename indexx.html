@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De ce esti gay?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Ocupă întreaga înălțime a ecranului */
+            background-color: #f4f4f9;
+        }
+
+       h1 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 20px; /* Spațiu sub titlu */
+    margin-top: 0; /* Eliminăm orice spațiu suplimentar de sus */
+    position: absolute; /* Poziționare absolută */
+    top: 20px; /* Împinge textul mai sus */
+    left: 50%; /* Centrează pe orizontală */
+    transform: translateX(-50%); /* Corecție pentru centrarea exactă */
+}
+
+        }
+
+        .button-wrapper {
+            display: flex; /* Activează flexbox */
+            justify-content: center; /* Centrează butoanele orizontal */
+            align-items: center; /* Aliniere verticală */
+            gap: 20px; /* Spațiu între butoane */
+            margin-top: 20px;
+        }
+
+        button {
+            font-size: 1.5rem;
+            padding: 10px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #message {
+            font-size: 5rem; /* Dimensiune mare a textului */
+            color: white;
+            position: fixed; /* Ocupă întreg ecranul */
+            top: 50%; /* Centrează vertical */
+            left: 50%; /* Centrează orizontal */
+            transform: translate(-50%, -50%); /* Corectează poziționarea */
+            text-align: center; /* Text centrat */
+            display: none; /* Ascuns inițial */
+            background-color: rgba(0, 0, 0, 0.8); /* Fundal semi-transparent */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <h1>Esti gay?</h1>
+    <div class="button-wrapper">
+        <button id="button1">DA!!!</button>
+        <button id="button2">Nu, lol</button>
+    </div>
+    <div id="message">Felicitări!</div>
+
+    <script>
+        const button1 = document.getElementById('button1');
+        const button2 = document.getElementById('button2');
+        const message = document.getElementById('message');
+
+        // Eveniment pentru afișarea mesajului „Felicitări!”
+        button1.addEventListener('click', () => {
+            message.style.display = 'block'; // Afișează mesajul
+            setTimeout(() => {
+                message.style.display = 'none'; // Ascunde mesajul după 3 secunde
+            }, 3000);
+        });
+
+        // Eveniment pentru mutarea „Butonului Fugar”
+        button2.addEventListener('mouseover', () => {
+            const containerWidth = window.innerWidth; // Lățimea ferestrei
+            const containerHeight = window.innerHeight; // Înălțimea ferestrei
+
+            // Poziții noi generate aleator pentru buton
+            const newLeft = Math.random() * (containerWidth - button2.offsetWidth);
+            const newTop = Math.random() * (containerHeight - button2.offsetHeight);
+
+            button2.style.position = 'absolute';
+            button2.style.left = `${newLeft}px`;
+            button2.style.top = `${newTop}px`;
+        });
+    </script>
+</body>
+</html>
